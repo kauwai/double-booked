@@ -8,8 +8,13 @@
     (or (and (<= start-ts1 end-ts2) (>= end-ts1 start-ts2))
         (and (<= start-ts2 end-ts1) (>= end-ts2 start-ts1)))))
 
-(defn get-overlapping-events [events]
-   (let [n (count events)]
+(defn get-overlapping-events
+  "Returns pairs of overlapping events from a sequence of events. Events must have the following keys:
+   
+   :start-ts - The start timestamp of the event
+   :end-ts - The end timestamp of the event"
+  [events]
+  (let [n (count events)]
     (for [i (range n)
           j (range (inc i) n)
           :when (overlaps? (events i) (events j))]
