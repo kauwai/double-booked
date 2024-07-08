@@ -10,8 +10,8 @@ In order to help maintain a calendar of events, it is important to know if they 
 
 This program uses a sequence of maps, in which every map represents an event. Also, these maps have the following keys:
 
-- `:start-ts`: The start timestamp of the event.
-- `:end-ts`: The end timestamp of the event.
+- `:start-ts` - The start timestamp of the event.
+- `:end-ts` - The end timestamp of the event.
 
 You can also see the example below:
 ```clojure
